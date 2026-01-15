@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETAILS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>PLEASE ENTER YOUR ROLLNO AND COMPLAINT DATE!</h3>
+    <div id="main">
+        <div id="h"></div>
+         <div id="d4">
+        <br><p id="p1"></p> 
+            <p id="p2"></p>
+    </div>
+    <div id="d2">
+        <p style="font-size:16px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top: 10px;margin-left: 80px;">NOTE:ALL IN CAPITAL EX-A,S,R...</p>
+        <br>
+        <input type="text" placeholder="ROLL NO" required id="i2" maxlength="11"><br>
+       
+        <br>
+        <input type="date" name="file" id="i3" placeholder="COMPLAINT DATE">
+         <button id="b1">SUBMIT</button>
+    </div>
+    </div>
+   
+</body>
+<script>
+    var h=document.getElementById("h");
+
+    h.innerText=localStorage.getItem("chose");
+    let b1=document.getElementById("b1");
+    var i1=document.getElementById("i1");
+    var i2=document.getElementById("i2");
+    var i3=document.getElementById("i3");
+    let p1=document.getElementById("p1");
+    let p2=document.getElementById("p2");
+    let p3=document.getElementById("p3");
+    let p4=document.getElementById("p4");
+    var d2=document.getElementById("d2");
+    var d4=document.getElementById("d4");
+    const info={
+        rajesh:{age:21,city:"tut"},pandi:{age:33,city:"raj"}
+    };
+    const roll={
+        25112:{city:"THOOTHUKUDI",age:17,name:"Rajesh"},25555:{city:"Theni",age:18,name:"Pandi"},
+        25111:{city:"CHENNAI",age:18,name:"Mental"}
+    };
+    const img={rajesh:{imgs:"vj.png"}};
+    b1.addEventListener("click",function(){
+       
+       let no=Number(i2.value.trim());
+       if(roll[no] && i3.value){
+            
+             d2.style.display="none";
+             d4.style.display="block";
+             p1.innerHTML="IAM "+roll[no].name+" IAM "+roll[no].age+" YEARS OLD. IAM FROM "+roll[no].city+". IAM SINCERLY FILING THIS COMPLAINT."+" THIS IS REPORTED ON "+ i3.value;
+            
+            p2.innerHTML="5";
+        
+            setTimeout(()=>{
+                p2.innerHTML="4";
+            },1000);
+            setTimeout(()=>{
+                p2.innerHTML="3";
+            },2000);
+            setTimeout(()=>{
+                p2.innerHTML="2";
+            },3000);
+            setTimeout(()=>{
+                p2.innerHTML="1";
+            },4000);
+            tim=setTimeout(()=>{
+                p2.style.marginLeft="150px";
+                p2.innerHTML="SENDED";
+                setTimeout(()=>{
+                    
+                    if(confirm("DO YOU HAVE OTHER COMPLAPINTS?")){
+                        window.location.href="index.html";
+                    }
+                    else{
+                        window.location.href="https://youtu.be/fJaAYcERf3Y?si=ErnFY_lFD2odkggk";
+                    }
+                },1500);
+            },5000);
+              
+        }
+        else{
+            alert("e");
+        }
+    });
+        
+
+</script>
+</html>

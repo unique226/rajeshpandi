@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPLAINT</title>
+</head>
+<body>
+    <h1>URGENT COMPLAINT</h1>
+    
+    <p>HOSTEL COMPLAINTS</p>
+    <br>
+    <button id="pending">PENDING</button>
+
+   <div id="d1">
+        <h3>Choose any one from these:</h3><select id="chose" name="choose" onchange="window.location.href='b.html'">
+        <option value="no" hidden>CATEGERIES</option>
+        <option value="YOUR COMPLAINT IS ABOUT ROOM MATES">ROOM MATES</option>
+        <option value="YOUR COMPLAINT IS ABOUT FOOD">FOOD</option>
+        <option value="YOUR COMPLAINT IS ABOUT BATHROOM">BATHROOM</option>
+        <option value="YOUR COMPLAINT IS ABOUT FURNITURE">FURNITURE</option>
+        <option value="YOUR COMPLAINT IS ABOUT ELECTRICITY">ELECTRICITY</option>
+        <option value="YOUR COMPLAINT IS ABOUT WIFI">WIFI</option>
+        <option value="YOUR COMPLAINT IS ABOUT LAUNDRY">LAUNDRY</option>
+        <option value="YOUR COMPLAINT IS ABOUT OTHERS">OTHERS</option>
+    </select>
+   </div>
+</body>
+<script>
+    var chose=document.getElementById("chose");
+    chose.addEventListener("change", function() {
+        var comp=document.getElementById("comp");
+        comp=localStorage.setItem("chose", chose.value);
+    });
+</script>
+</html>
